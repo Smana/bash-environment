@@ -1,0 +1,39 @@
+# .bashrc
+
+K8S_BINARIES=( "kubectl" "helm" )
+
+for BIN in ${K8S_BINARIES[@]}; do
+  if $(which ${BIN} > /dev/null 2>&1); then
+    source <(${BIN} completion bash)
+  fi
+done
+if $(which stern > /dev/null 2>&1); then
+  source <(stern --completion=bash)
+fi
+
+# History Settings
+export HISTSIZE=20000
+export HISTFILESIZE=30000
+export TIMEFORMAT=$'\nreal %3R\tuser %3U\tsys %3S\tpcpu %P\n'
+export HISTTIMEFORMAT="%d/%m/%Y - %H:%M:%S > "
+export HISTIGNORE="&:bg:fg:ll:h"
+
+export EDITOR=/usr/bin/vim
+
+# Aliases
+
+LS_OPTIONS='--color=auto'
+alias  ls='ls $LS_OPTIONS -F'                    # Append indicator (one of */=>@|)
+alias  ll='ls $LS_OPTIONS  -Fls'                  # Listing
+alias  la='ls $LS_OPTIONS  -all'
+alias rm='rm -i'
+alias mv='mv -i'
+alias vi='vim'
+alias pstree='pstree -Ap'
+alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
+
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+if [[ $TMUX ]]; then source ~/.tmux-git/tmux-git.sh; fi
+

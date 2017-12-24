@@ -1,0 +1,31 @@
+[user]
+        name = Smaine Kahlouch
+        email = smainklh@gmail.com
+	signingkey = 40B9BDE1D7046950
+
+[color]
+        branch = auto
+        diff = auto
+        interactive = auto
+        status = auto
+
+[commit]
+	gpgsign = true
+
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+
+[core]
+        editor = vim
+
+[merge]
+        tool = meld
+
+[web]
+        browser = chromium
+
+[alias]
+        lp = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+[push]
+        default = matching
