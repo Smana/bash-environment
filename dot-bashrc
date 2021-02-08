@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Path to the bash it configuration
-export BASH_IT="/home/smana/.bash_it"
+export BASH_IT="/home/smaine.kahlouch/.bash_it"
 
 # Lock and Load a custom theme file
 # location /.bash_it/themes/
@@ -58,4 +58,4 @@ complete -C /usr/local/bin/vault vault
 export PATH=$PATH:~/.jx/bin
 
 
-source /home/smana/.config/broot/launcher/bash/br
+source /home/smaine.kahlouch/.config/broot/launcher/bash/br
